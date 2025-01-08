@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+class sample{
+    public:
+    void display();
+};
+void sample ::display(){
+    cout<<"Hii";
+}
+int main(){
+    sample s;
+    s.display();
+    return 0;
+}
