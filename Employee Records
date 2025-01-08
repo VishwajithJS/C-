@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+class Employee {
+    public:
+    int id;
+    string name;
+    float salary;
+    Employee() {
+        id = 102;
+        name = "Rayyan";
+        salary = 500000.0;
+    }
+    Employee(int empId, string empName, float empSalary) {
+        id = empId;
+        name = empName;
+        salary = empSalary;
+    }
+    void display() {
+        cout << "Employee ID: " << id << endl;
+        cout << "Employee Name: " << name << endl;
+        cout << "Employee Salary: " << salary << endl;
+    }
+};
+
+int main() {
+    Employee emp1(101, "Abijith UK", 500000.0);
+    emp1.display();
+    Employee emp2;
+    emp2.display();
+
+    return 0;
+}
