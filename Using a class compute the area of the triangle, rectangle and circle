@@ -1,0 +1,80 @@
+#include<iostream>
+using namespace std;
+
+class circle {
+    float radius, area;
+public:
+    circle() {
+        cout << "\n Enter the value of Radius : ";
+        cin >> radius;
+    }
+    void calculate();
+    void display();
+};
+
+inline void circle::calculate() {
+    area = 3.14 * radius * radius;
+}
+
+inline void circle::display() {
+    cout << "\n Area of Circle : " << area<<"cm2";
+}
+
+class rectangle {
+    float length, breadth, areaRec;
+public:
+    rectangle() {
+        cout << "\n Enter the length of rectangle: ";
+        cin >> length;
+        cout << "\n Enter the breadth of rectangle: ";
+        cin >> breadth;
+    }
+    void calculate();
+    void display();
+};
+
+inline void rectangle::calculate() {
+    areaRec = length * breadth;
+}
+
+inline void rectangle::display() {
+    cout << "\n The area of Rectangle: " << areaRec<<"cm2";
+}
+
+class triangle {
+    float base, height, areaTri;
+public:
+    triangle() {
+        cout << "\n Enter the base of triangle: ";
+        cin >> base;
+        cout << "\n Enter the height of triangle: ";
+        cin >> height;
+    }
+    void calculate();
+    void display();
+};
+
+inline void triangle::calculate() {
+    areaTri = 0.5 * base * height;
+}
+
+inline void triangle::display() {
+    cout << "\n The area of Triangle: " << areaTri<<"cm2";
+}
+
+int main() {
+    circle cr;
+    cr.calculate();
+    cr.display();
+
+    rectangle rec;
+    rec.calculate();
+    rec.display();
+
+    triangle tri;
+    tri.calculate();
+    tri.display();
+
+    return 0;
+}
+_
