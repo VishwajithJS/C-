@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class Addition {
+public:
+    int num1;
+    int num2;
+    int p;
+
+    void check() {
+        switch (p) {
+            case 1:
+                cout << num1 + num2 << endl;
+                break;
+            case 2:
+                cout << num1 - num2 << endl;
+                break;
+            case 3:
+                cout << num1 % num2 << endl;
+                break;
+            case 4:
+                cout << num1 * num2 << endl;
+                break;
+            case 5:
+                if (num2 != 0)
+                    cout << num1 / num2 << endl;
+                else
+                    cout << "Error! Division by zero." << endl;
+                break;
+            default:
+                cout << "Invalid operation!" << endl;
+        }
+    }
+};
+
+int main() {
+    Addition num;
+    cout << "Enter 1st number: ";
+    cin >> num.num1;
+    cout << "Enter 2nd number: ";
+    cin >> num.num2;
+
+    cout << "Choose an operation:" << endl;
+    cout << "1. Add" << endl;
+    cout << "2. Subtract" << endl;
+    cout << "3. Modulus" << endl;
+    cout << "4. Multiply" << endl;
+    cout << "5. Divide" << endl;
+    cin >> num.p;
+
+    num.check();
+    return 0;
+}
