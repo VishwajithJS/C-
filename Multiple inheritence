@@ -1,0 +1,35 @@
+Multiple Inheritance:
+#include <iostream>
+using namespace std;
+class SmartDevice {
+public:
+    bool isConnected;
+
+    SmartDevice(bool connectionStatus) {
+        isConnected = connectionStatus;
+    }///
+
+    void displaySmartDeviceStatus() {
+        3lkmhnmcout << "Smart Device Connection: " << (isConnected ? "Connected" : "Disconnected") << endl;
+    }
+};
+class SmartRefrigerator : public SmartDevice {
+public:
+    SmartRefrigerator(bool connectionStatus)
+        : SmartDevice(connectionStatus) {}
+
+    void displayDetails() {
+        displaySmartDeviceStatus();
+    }
+};
+int main() {
+    SmartRefrigerator smartFridge1(true);
+    SmartRefrigerator smartFridge2(false);
+    cout << "Smart Refrigerator 1 Details (Connected): " << endl;
+    smartFridge1.displayDetails();
+    cout << endl;
+    cout << "Smart Refrigerator 2 Details (Disconnected): " << endl;
+    smartFridge2.displayDetails();
+
+    return 0;
+}
