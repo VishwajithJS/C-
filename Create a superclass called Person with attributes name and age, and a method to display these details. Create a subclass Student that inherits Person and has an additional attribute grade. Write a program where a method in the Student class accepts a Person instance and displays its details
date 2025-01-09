@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class person {
+public:
+    string name;
+    int age;
+    void getdata(string n, int a) {
+        name = n;
+        age = a;
+    }
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Age: " << age << endl;
+    }
+};
+class Student : public person {
+public:
+    string grade;
+    void gradescore(string x) {
+        grade = x;
+        cout << "Grade: " << grade << endl;
+        display();
+    }
+};
+int main() {
+    person p;
+    p.getdata("Vishwajith", 19);
+    Student s;
+    s.getdata("Vishwajith", 19); 
+    s.gradescore("A");
+    return 0;
+}
