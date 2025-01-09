@@ -1,0 +1,22 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Greeter {
+public:
+    void greet() {
+        cout << "Hello!" << endl;
+    }
+    void greet(string name) {
+        cout << "Hello! " << name << "!" << endl;
+    }
+    void greet(string name, string timeOfDay) {
+        cout << "Good " << timeOfDay << ", " << name << "!" << endl;
+    }
+};
+int main() {
+    Greeter greeter;
+    greeter.greet();
+    greeter.greet("Vishwa");
+    greeter.greet("Vishwa", "Evening");
+    return 0;
+}
