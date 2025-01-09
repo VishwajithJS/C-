@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+using namespace std;
+class Student {
+public:
+    int uid;
+    string name;
+    float marks;
+    Student() {
+        uid = 0;
+        name = "unknown";
+        marks = 0.0;
+    }
+    Student(int id, string studentName, float studentMarks) {
+        uid = id;
+        name = studentName;
+        marks = studentMarks;
+    }
+    void display() {
+        cout << "Unique Id: " << uid << "\n";
+        cout << "Name: " << name << "\n";
+        cout << "Marks: " << marks << "\n";
+    }
+};
+int main() {
+    Student student; 
+    Student student1(1, "Ritvik", 70.0);
+    Student student2(2, "Nikilesh", 100.0);
+    Student student3(11, "Vishwajith", 90.0);
+    student.display();
+    student1.display();
+    student2.display();
+    student3.display();
+    return 0;
+}
+_________________________________________________________________________________________________________________________________________
+Multiple Inheritance:
+#include <iostream>
+using namespace std;
+class SmartDevice {
+public:
+    bool isConnected;
+
+    SmartDevice(bool connectionStatus) {
+        isConnected = connectionStatus;
+    }///
+
+    void displaySmartDeviceStatus() {
+        3lkmhnmcout << "Smart Device Connection: " << (isConnected ? "Connected" : "Disconnected") << endl;
+    }
+};
+class SmartRefrigerator : public SmartDevice {
+public:
+    SmartRefrigerator(bool connectionStatus)
+        : SmartDevice(connectionStatus) {}
+
+    void displayDetails() {
+        displaySmartDeviceStatus();
+    }
+};
+int main() {
+    SmartRefrigerator smartFridge1(true);
+    SmartRefrigerator smartFridge2(false);
+    cout << "Smart Refrigerator 1 Details (Connected): " << endl;
+    smartFridge1.displayDetails();
+    cout << endl;
+    cout << "Smart Refrigerator 2 Details (Disconnected): " << endl;
+    smartFridge2.displayDetails();
+
+    return 0;
+}
