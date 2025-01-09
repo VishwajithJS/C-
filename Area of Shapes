@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+class ShapeAreaCalculator {
+public:
+    double calculateArea(int side) {
+        return side * side;
+    }
+    double calculateArea(double length, double breadth) {
+        return length * breadth;
+    }
+    double calculateArea(double radius) {
+        return M_PI * radius * radius;
+    }
+};
+int main() {
+    ShapeAreaCalculator calculator;
+    int side = 5;
+    double length = 5;
+    double breadth = 10;
+    double radius = 7;
+
+    cout << "Area of square with side " << side << ": " << calculator.calculateArea(side)<< endl;
+    cout << "Area of rectangle with length " << length << " and breadth " << breadth << ": " << calculator.calculateArea(length, breadth)<< endl;
+    cout << "Area of circle with radius " << radius << ": " << calculator.calculateArea(radius) << endl;
+    return 0;
+}
