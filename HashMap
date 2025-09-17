@@ -1,0 +1,23 @@
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> scores = new HashMap<>();
+        scores.put("A", 90);
+        scores.put("B", 85);
+        scores.put("C", 95);
+        scores.put("D", 88);
+        scores.put("A", 92);
+        System.out.println("All scores: " + scores);
+        int scoreOfC = scores.get("C");
+        System.out.println("Score for C: " + scoreOfC);
+        boolean hasKeyD = scores.containsKey("D");
+        System.out.println("Does the map contain key 'D'? " + hasKeyD);
+        scores.remove("B");
+        System.out.println("Scores after removing B: " + scores);
+        System.out.println("\nIterating through the map:");
+        for (Map.Entry<String, Integer> entry : scores.entrySet()) {
+            System.out.println("Student: " + entry.getKey() + ", Score: " + entry.getValue());
+        }
+    }
+}
