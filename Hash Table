@@ -1,0 +1,48 @@
+import java.util.*;
+
+class HashTable {
+    private LinkedList<Integer>[] table;
+    private int size;
+
+    public HashTable(int size) {
+        this.size = size;
+        table = new LinkedList[size];
+        for (int i = 0; i < size; i++)
+            table[i] = new LinkedList<>();
+    }
+
+    private int hash(int key) {
+        return Math.abs(key % size);
+    }
+
+    public void insert(int key) {
+        int index = hash(key);
+        table[index].add(key);
+    }
+
+    public boolean search(int key) {
+        int index = hash(key);
+        return table[index].contains(key);
+    }
+
+    public void display() {
+        for (int i = 0; i < size; i++) {
+            System.out.print(i + ": ");
+            for (int val : table[i]) {
+                System.out.print(val + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void main(String[] args) {
+        HashTable ht = new HashTable(7);
+        ht.insert(10);
+        ht.insert(20);
+        ht.insert(15);
+        ht.insert(7);
+        ht.display();
+        System.out.println("Search 20: " + ht.search(20));
+        System.out.println("Search 99: " + ht.search(99));
+    }
+}
