@@ -1,0 +1,12 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] arr = {12,1,2,5,23,12,45,34,12,87,5,46,45,2349,242,24,25,353,44,5,353,6546};
+        Set<Integer> set = new TreeSet<>();
+        for (int num : arr) {
+            set.add(num);
+        }
+        System.out.println("Sorted unique values: " + set);
+    }
+}
